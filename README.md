@@ -8,7 +8,7 @@ Full lambda deployment package is shown as well as the zip file "watch_exchange_
 For the code to work you will need to setup a DynamoDB table, a SNS topic, and an AWS Secret Key (optional but recommended).
 
 ## Architecture
-<img src="https://github.com/stevenwtolbert/WatchExchangeNotificationSystem/tree/master/images" height=100% width=100%>
+<img src="https://github.com/stevenwtolbert/WatchExchangeNotificationSystem/blob/master/images/watchexchange_notification_system_architecture.png" height=100% width=100%>
 
 
 ## Contributing
