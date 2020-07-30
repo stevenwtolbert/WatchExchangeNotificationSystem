@@ -68,7 +68,7 @@ def lambda_handler(event, context):
              
     keywords = ['rolex', 'omega', 'patek', 'audemars', 'lange', 'vacheron']
     
-    for submission in reddit.subreddit("watchexchange").new(limit=5):
+    for submission in reddit.subreddit("watchexchange").new(limit=15):
         prices_found = []
         if(any(substring in submission.title.lower() for substring in keywords)):
             uid = submission.id
