@@ -54,6 +54,7 @@ def put_id(uid, dynamodb=None):
     return response
     
 def lambda_handler(event, context):
+    new_item_found = False
     client = boto3.client('sns')
     reddit_api_keys = get_secret()
     
@@ -77,6 +78,7 @@ def lambda_handler(event, context):
                 print("{} ID Already Exists in Database".format(uid))
                 continue
             print("NEW ENTRY {}".format(uid))
+            new_item_found = True
 
             title = submission.title
             link = "reddit.com{}".format(submission.permalink)
@@ -96,10 +98,10 @@ def lambda_handler(event, context):
     message = {"Title": posts['Title'],
                "Link" : posts['Link'],
                "Price": posts['Price']}
-            
-    response = client.publish(TargetArn=reddit_api_keys['REDDIT_SNS_ARN'],
-                              Message=json.dumps({'default': json.dumps(message)}),
-                              MessageStructure='json')
+    if(new_item_found == True):        
+        response = client.publish(TargetArn=reddit_api_keys['REDDIT_SNS_ARN'],
+                                  Message=json.dumps({'default': json.dumps(message)}),
+                                  MessageStructure='json')
                               
     return {
         'statusCode': 200,
