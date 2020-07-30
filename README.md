@@ -2,6 +2,10 @@
 
 This is a Python 3.8 based lambda function for querying /r/WatchExchange via the Reddit API. If a keyword is found in the submission title and it has not been seen before a text message notification will be sent.
 
+The lambda function is defaulted to the following keywords: keywords = ['rolex', 'omega', 'patek', 'audemars', 'lange', 'vacheron']
+
+Keywords and target subreddit can be changed to fit use case. 
+
 ## Installation
 Full lambda deployment package is shown as well as the zip file "watch_exchange_deployment.zip". The zip file can directly be imported into the lambda function and run. 
 
