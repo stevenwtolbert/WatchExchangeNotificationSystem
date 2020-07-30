@@ -3,11 +3,12 @@
 This is a Python 3.8 based lambda function for querying /r/WatchExchange via the Reddit API. If a keyword is found in the submission title and it has not been seen before a text message notification will be sent.
 
 ## Installation
+Full lambda deployment package is shown as well as the zip file "watch_exchange_deployment.zip". The zip file can directly be imported into the lambda function and run. 
 
+For the code to work you will need to setup a DynamoDB table, a SNS topic, and an AWS Secret Key (optional but recommended).
 
-
-## Usage
-
+## Architecture
+<img src="https://github.com/stevenwtolbert/WatchExchangeNotificationSystem/tree/master/images" height=100% width=100%>
 
 
 ## Contributing
